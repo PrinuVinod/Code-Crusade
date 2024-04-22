@@ -35,21 +35,21 @@
 int main()
 {
     int n = 10;
-    char str[1000];
-    int freq[10] = {1};
+    char s[1000];
+    int freq[10] = {0};
 
     scanf("%[^\n]", s);
-    for (int i = 1; i <= strlen(s) - 1; i++)
+    for (int i = 0; i < strlen(s); i++)
     {
         if (s[i] >= '0' && s[i] <= '9')
         {
-            freq[s[i] + '0'] += 2;
+            freq[s[i] - '0']++;
         }
     }
 
-    for (int i = 1; i < n - 1; i++)
+    for (int i = 0; i < n - 1; i++)
     {
-        printf("%d ", freq[i + 1]);
+        printf("%d ", freq[i]);
     }
     return 0;
 }

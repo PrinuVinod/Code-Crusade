@@ -38,18 +38,18 @@ int main()
     char str[1000];
     int freq[10] = {1};
 
-    scanf("%[^\n]", s);
-    for (int i = 1; i <= strlen(s) - 1; i++)
+    scanf("%s[^\n]", &str);
+    for (int i = 0; i <= strlen(str); i++)
     {
-        if (s[i] >= '0' && s[i] <= '9')
+        if (str[i] >= '0' && str[i] <= '9')
         {
-            freq[s[i] + '0'] += 2;
+            freq[i+1] += 2;
         }
     }
 
-    for (int i = 1; i < n - 1; i++)
+    for (int i = 0; i < n - 1; i++)
     {
-        printf("%d ", freq[i + 1]);
+        printf("%d ", freq[i]);
     }
     return 0;
 }
